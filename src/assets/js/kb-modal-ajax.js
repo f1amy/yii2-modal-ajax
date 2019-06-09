@@ -38,6 +38,9 @@
         this.initalRequestUrl = options.url;
         this.ajaxSubmit = options.ajaxSubmit;
         jQuery(this.element).on('show.bs.modal', this.shown.bind(this));
+        jQuery(this.element).on('hidden.bs.modal', function () {
+            $(this.element).find('.modal-body').html('');
+        }.bind(this));
     };
 
     /**
